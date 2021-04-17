@@ -10,15 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity android:name=".MainActivity">
+       </activity>
+        //starting screen is here for testing purposes
+        <activity android:name=".CreatePasswordActivity"> <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
+
+        <activity android:name=".EnterPasswordActivity"></activity>
+        <activity android:name=".NotificationActivity">
         </activity>
-
+        <activity android:name=".SplashActivity"></activity>
         <activity android:name=".InputContactActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
     </application>
