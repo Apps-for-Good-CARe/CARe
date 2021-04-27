@@ -29,12 +29,6 @@ public class SendSMSActivity extends FragmentActivity implements OnMapReadyCallb
 
     private GoogleMap mMap;
 
-    private LocationManager locationManager;
-    private LocationListener locationListener;
-
-    private final long MIN_TIME = 1000;
-    private final long MIN_DIST = 5;
-
     private LatLng latLng;
 
     @Override
@@ -44,6 +38,7 @@ public class SendSMSActivity extends FragmentActivity implements OnMapReadyCallb
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+        assert mapFragment != null;
         mapFragment.getMapAsync(this);
 
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS}, PackageManager.PERMISSION_GRANTED);
@@ -69,7 +64,7 @@ public class SendSMSActivity extends FragmentActivity implements OnMapReadyCallb
         // mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         // mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
-        locationListener = new LocationListener() {
+        LocationListener locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
                 try {
@@ -84,9 +79,8 @@ public class SendSMSActivity extends FragmentActivity implements OnMapReadyCallb
 
                     String message = "Latitude = " + myLatidude + " Longitude = " + myLongitude;
                     SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(phoneNumber,null,message,null,null);
-                }
-                catch (Exception e){
+                    smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -107,10 +101,12 @@ public class SendSMSActivity extends FragmentActivity implements OnMapReadyCallb
             }
         };
 
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         try {
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME,MIN_DIST,locationListener);
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,MIN_TIME,MIN_DIST,locationListener);
+            long MIN_DIST = 5;
+            long MIN_TIME = 1000;
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DIST, locationListener);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME, MIN_DIST, locationListener);
         }
         catch (SecurityException e){
             e.printStackTrace();
