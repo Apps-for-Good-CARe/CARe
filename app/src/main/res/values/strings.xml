@@ -5,5 +5,7 @@
     <string name="emergencyContactPhoneInputStr">Enter phone number:</string>
     <string name="emergencyContactNameInputStr">Enter name:</string>
     <string name="emergencyContactPhoneLabelStr">Phone:</string>
-    <string name="buttonEmergencyContactStr">ADD CONTACT</string>
+    <string name="tipEmergencyContact">* 911 is automatically an emergency contact *</string>
+    <string name="enter_pin">Enter pin</string>
+    <!-- <string name="enter"></string> !-->
 </resources>
