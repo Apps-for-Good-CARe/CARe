@@ -13,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 // Made with the help of Mrs. Taricco, https://youtu.be/jjL4R-aiwPE, https://developer.android.com/training/contacts-provider/modify-data#create-an-intent, and https://youtu.be/fJEFZ6EOM9o
 
-// Automatically make 911 an emergency contact?
-
 public class InputContactActivity extends AppCompatActivity {
 
     private TextView textView;
@@ -82,7 +80,6 @@ public class InputContactActivity extends AppCompatActivity {
             EditText name3 = findViewById(R.id.EmergencyContactInputName3);
             EditText phone3 = findViewById(R.id.EmergencyContactInputPhone3);
 
-
             // Uses switch condition to store each tab with contact's information
 
             switch(tabId) {
@@ -106,7 +103,7 @@ public class InputContactActivity extends AppCompatActivity {
                     break;
 
 
-                // Inputs the first contact, if applicable
+                // Inputs the second contact, if applicable
 
                 case "2":
 
