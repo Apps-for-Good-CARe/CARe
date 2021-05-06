@@ -31,8 +31,6 @@ public class InputContactActivity extends AppCompatActivity {
     private String phoneCon2;
     private String nameCon3;
     private String phoneCon3;
-    private String nameCon4;
-    private String phoneCon4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -193,8 +191,6 @@ public class InputContactActivity extends AppCompatActivity {
         phoneCon2 = sharedPreferences.getString(PHONE, "");
         nameCon3 = sharedPreferences.getString(NAME, "");
         phoneCon3 = sharedPreferences.getString(PHONE, "");
-        nameCon4 = "911";
-        phoneCon4 = "911";
 
     }
 
