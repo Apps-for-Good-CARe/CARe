@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Linear layout as the root layout-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TipEmergencyContact"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputContactActivity">
+
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--Tab widget to select the tab-->
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!--FrameLayout which contains the data of the activity-->
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--for tab 1-->
+                <LinearLayout
+                    android:id="@+id/contact1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/EmergencyContactNameLabel2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="40dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/emergencyContactNameLabelStr"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/EmergencyContactInputName1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/emergencyContactNameInputStr"
+                        android:inputType="textPersonName"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/EmergencyContactPhoneLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="60dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/emergencyContactPhoneLabelStr"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/EmergencyContactInputPhone1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/emergencyContactPhoneInputStr"
+                        android:inputType="phone"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <!--for tab 2-->
+                <LinearLayout
+                    android:id="@+id/contact2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/EmergencyContactNameLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="40dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/emergencyContactNameLabelStr"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/EmergencyContactInputName2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/emergencyContactNameInputStr"
+                        android:inputType="textPersonName"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/EmergencyContactPhoneLabel2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="60dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/emergencyContactPhoneLabelStr"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/EmergencyContactInputPhone2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/emergencyContactPhoneInputStr"
+                        android:inputType="phone"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <!--for tab 3-->
+                <LinearLayout
+                    android:id="@+id/contact3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/EmergencyContactNameLabel3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="40dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/emergencyContactNameLabelStr"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/EmergencyContactInputName3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/emergencyContactNameInputStr"
+                        android:inputType="textPersonName"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/EmergencyContactPhoneLabel3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="60dp"
+                        android:paddingBottom="20dp"
+                        android:text="@string/emergencyContactPhoneLabelStr"
+                        android:textSize="24sp" />
+
+                    <EditText
+                        android:id="@+id/EmergencyContactInputPhone3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="@string/emergencyContactPhoneInputStr"
+                        android:inputType="phone"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </TabHost>
+
+</LinearLayout>
