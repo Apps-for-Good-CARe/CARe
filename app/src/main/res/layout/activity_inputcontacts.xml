@@ -80,6 +80,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp"
                         android:textSize="24sp" />
+
                 </LinearLayout>
 
                 <!--for tab 2-->

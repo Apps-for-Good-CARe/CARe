@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+// 15 (ALR) + 20 (DF) + 325 (LA) + 27 (LAB) + 88 (
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
