@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--the blueroughcar drawable was obtained from https://freesvg.org/blue-car-sketch-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Welcome">
+
+    <Button
+        android:id="@+id/PinSetup"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="411dp"
+        android:layout_marginEnd="239dp"
+        android:layout_marginBottom="240dp"
+        android:text="@string/PinSetup" />
+
+    <Button
+        android:id="@+id/ContactSetUp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="211dp"
+        android:layout_marginTop="411dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="240dp"
+        android:text="@string/ContactSetUp" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="159dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="485dp"
+        android:gravity="center"
+        android:text="@string/Welcome"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/tap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="355dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="328dp"
+        android:backgroundTint="#5EA1D6"
+        android:text="@string/tap" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="374dp"
+        app:srcCompat="@drawable/car" />
+</RelativeLayout>

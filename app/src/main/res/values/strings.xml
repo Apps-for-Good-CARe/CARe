@@ -6,6 +6,13 @@
     <string name="emergencyContactPhoneLabelStr">Phone:</string>
     <string name="emergencyContactPhoneInputStr">Enter phone number:</string>
     <string name="enter_pin">Enter pin</string>
+    <string name="Welcome">Welcome to CARe!</string>
+
+    <string name="PinSetup">Pin Set-Up</string>
+    <string name="ContactSetUp">Contact Set-Up</string>
+    <string name="tap">Tap Here to Continue</string>
+    <string name="todo"> TODO  </string>
+
     <string name="active">active</string>
     <string name="button3">send sms message</string>
     <string name="defaultText">SMS location</string>

@@ -17,28 +17,26 @@
         android:allowBackup="false"
         tools:ignore="ExtraText">
 
-        <activity android:name=".MainActivity">
-        </activity>
-
         <activity android:name=".CreatePasswordActivity">
+        </activity>
+        <activity android:name=".ColorChangingSignalActivity">
         </activity>
 
         <activity android:name=".EnterPasswordActivity">
         </activity>
 
-        <activity android:name=".NotificationActivity">
+        <activity android:name=".NotificationCreator">
         </activity>
-
         <activity android:name=".SendSMSMessage">
         </activity>
-
         <activity android:name=".InputContactActivity">
-        <intent-filter>
+
+        </activity>
+        <activity android:name="Welcome"><intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-       </activity>
+        </intent-filter></activity>
 
     </application>
 
