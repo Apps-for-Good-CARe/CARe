@@ -33,6 +33,8 @@
                 android:layout_height="match_parent">
 
                 <!--for tab 1-->
+
+                <!--for tab 2-->
                 <LinearLayout
                     android:id="@+id/contact1"
                     android:layout_width="match_parent"
@@ -83,7 +85,6 @@
 
                 </LinearLayout>
 
-                <!--for tab 2-->
                 <LinearLayout
                     android:id="@+id/contact2"
                     android:layout_width="match_parent"
@@ -131,6 +132,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp"
                         android:textSize="24sp" />
+
                 </LinearLayout>
 
                 <!--for tab 3-->
@@ -181,6 +183,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp"
                         android:textSize="24sp" />
+
                 </LinearLayout>
 
             </FrameLayout>

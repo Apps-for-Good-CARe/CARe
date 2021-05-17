@@ -3,32 +3,19 @@ package com.example.myapplication;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TabHost;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
+
 
 // Made with the help of Mrs. Taricco, https://youtu.be/jjL4R-aiwPE, https://developer.android.com/training/contacts-provider/modify-data#create-an-intent, and https://youtu.be/fJEFZ6EOM9o
 
 public class InputContactActivity extends AppCompatActivity {
 
-    private TextView textView;
-    private TextView phoneView;
-    private EditText editText;
 
-    public static final String SHARED_PREFS = "shared prefs";
-    public static final String NAME= "text";
-    public static final String PHONE = "num";
-
-    private String nameCon1;
-    private String phoneCon1;
-    private String nameCon2;
-    private String phoneCon2;
-    private String nameCon3;
-    private String phoneCon3;
+    public static final String SHARED_PREFS = "CONTACT_PREFS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,86 +55,24 @@ public class InputContactActivity extends AppCompatActivity {
         spec.setIndicator("Contact 3");
         tabHost.addTab(spec);
 
-        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-            @Override
-            public void onTabChanged(String tabId) {
-
-            Log.d("InputContactActivity", "TAB ID: " + tabId);
-            EditText name1 = findViewById(R.id.EmergencyContactInputName1);
-            EditText phone1 = findViewById(R.id.EmergencyContactInputPhone1);
-            EditText name2 = findViewById(R.id.EmergencyContactInputName2);
-            EditText phone2 = findViewById(R.id.EmergencyContactInputPhone2);
-            EditText name3 = findViewById(R.id.EmergencyContactInputName3);
-            EditText phone3 = findViewById(R.id.EmergencyContactInputPhone3);
-
-            // Uses switch condition to store each tab with contact's information
-
-            switch(tabId) {
-
-                // Inputs the first contact, if applicable
-
-
-                case "1":
-
-                    if (!name1.getText().toString().isEmpty() || !phone1.getText().toString().isEmpty()) {
-                        saveData();
-                        loadData();
-                        updateViews();
-                    }
-
-                    else {
-                        Toast toast = Toast.makeText(getApplicationContext(), "Emergency Contact 1 is empty", Toast.LENGTH_SHORT);
-                        toast.show();
-                    }
-
-                    break;
-
-
-                // Inputs the second contact, if applicable
-
-                case "2":
-
-                    if (!name2.getText().toString().isEmpty() || !phone2.getText().toString().isEmpty()) {
-                        saveData();
-                        loadData();
-                        updateViews();
-                    }
-
-                    else {
-                        Toast toast = Toast.makeText(getApplicationContext(), "Emergency Contact 2 is empty", Toast.LENGTH_SHORT);
-                        toast.show();
-                    }
-
-                    break;
-
-                 // Inputs the third contact, if applicable
-
-                case "3":
-
-                    if (!name3.getText().toString().isEmpty() || !phone3.getText().toString().isEmpty()) {
-                        saveData();
-                        loadData();
-                        updateViews();
-                    }
-
-                    else {
-                        Toast toast = Toast.makeText(getApplicationContext(), "Emergency Contact 2 is empty", Toast.LENGTH_SHORT);
-                        toast.show();
-                    }
-
-                    break;
-
-            }
-
-            }
-
-        });
+        loadDataAndUpdateView();
 
     }
 
-     // Saves the contact information using Shared Preferences
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(getApplicationContext(), "onStop caller", Toast.LENGTH_LONG).show();
 
-    public void saveData() {
+        // Save data back to SharedPreference onStop()
+        saveData();
+
+    }
+
+    // Saves the contact information using Shared Preferences
+
+    private void saveData() {
+
+        Log.d("TESTER1", "Calling saveData() method");
 
         EditText name1 = findViewById(R.id.EmergencyContactInputName1);
         EditText phone1 = findViewById(R.id.EmergencyContactInputPhone1);
@@ -156,49 +81,67 @@ public class InputContactActivity extends AppCompatActivity {
         EditText name3 = findViewById(R.id.EmergencyContactInputName3);
         EditText phone3 = findViewById(R.id.EmergencyContactInputPhone3);
 
-        SharedPreferences sharedPreferences1 = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor editor1 = sharedPreferences1.edit();
-        editor1.putString(NAME, name1.getText().toString());
-        editor1.putString(PHONE, phone1.getText().toString());
-        editor1.apply();
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        SharedPreferences sharedPreferences2 = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor editor2 = sharedPreferences2.edit();
-        editor2.putString(NAME, name2.getText().toString());
-        editor2.putString(PHONE, phone2.getText().toString());
-        editor2.apply();
+        editor.putString("ContactName1", name1.getText().toString());
+        editor.putString("ContactPhone1", phone1.getText().toString());
+        editor.putString("ContactName2", name2.getText().toString());
+        editor.putString("ContactPhone2", phone2.getText().toString());
+        editor.putString("ContactName3", name3.getText().toString());
+        editor.putString("ContactPhone3", phone3.getText().toString());
 
-        SharedPreferences sharedPreferences3 = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor editor3 = sharedPreferences3.edit();
-        editor3.putString(NAME, name3.getText().toString());
-        editor3.putString(PHONE, phone3.getText().toString());
-        editor3.apply();
+        editor.apply();
 
         Toast.makeText(this, "Contact(s) saved", Toast.LENGTH_SHORT).show();
 
     }
 
-    public void loadData() {
+    private void loadDataAndUpdateView() {
 
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        String notFound = "";
+        Log.d("TESTER2", "Calling loadDataAndUpdateView() method");
 
-        nameCon1 = sharedPreferences.getString(NAME, "");
-        phoneCon1 = sharedPreferences.getString(PHONE, "");
-        nameCon2 = sharedPreferences.getString(NAME, "");
-        phoneCon2 = sharedPreferences.getString(PHONE, "");
-        nameCon3 = sharedPreferences.getString(NAME, "");
-        phoneCon3 = sharedPreferences.getString(PHONE, "");
+        // Get the SharedPreferences by filename
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, 0);
+
+        // Get all six contact data fields from SharedPreferences
+        String nameCon1 = sharedPreferences.getString("ContactName1", notFound);
+        String phoneCon1 = sharedPreferences.getString("ContactPhone1", notFound);
+        String nameCon2 = sharedPreferences.getString("ContactName2", notFound);
+        String phoneCon2 = sharedPreferences.getString("ContactPhone2", notFound);
+        String nameCon3 = sharedPreferences.getString("ContactName3", notFound);
+        String phoneCon3 = sharedPreferences.getString("ContactPhone3", notFound);
+
+        // Get all six EditText widgets from the XML activity
+        EditText name1 = findViewById(R.id.EmergencyContactInputName1);
+        EditText phone1 = findViewById(R.id.EmergencyContactInputPhone1);
+        EditText name2 = findViewById(R.id.EmergencyContactInputName2);
+        EditText phone2 = findViewById(R.id.EmergencyContactInputPhone2);
+        EditText name3 = findViewById(R.id.EmergencyContactInputName3);
+        EditText phone3 = findViewById(R.id.EmergencyContactInputPhone3);
+
+        // Get all six EditText widgets with each specific contact data information
+        name1.setText(nameCon1);
+        phone1.setText(phoneCon1);
+        name2.setText(nameCon2);
+        phone2.setText(phoneCon2);
+        name3.setText(nameCon3);
+        phone3.setText(phoneCon3);
 
     }
 
-    public void updateViews() {
-
-        textView.setText(nameCon1);
-        phoneView.setText(phoneCon1);
-        textView.setText(nameCon2);
-        phoneView.setText(phoneCon2);
-        textView.setText(nameCon3);
-        phoneView.setText(phoneCon3);
-
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
