@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.futuresmsactivity;
 
 // Made with the help of https://github.com/pfeuffer/SMSloc/tree/bd3edbaaafcc1f593049e4d76bc4f28f47a5de9c/src/de/pfeufferweb/android/whereru
 

@@ -35,7 +35,9 @@ Button button;
            if(text1.equals("")||text2.equals("")) {
                //there's no password
                Toast.makeText(CreatePasswordActivity.this, "No pin entered!", Toast.LENGTH_SHORT).show();
-           }else{
+           }
+
+           else {
                if(text1.equals(text2)) {
                    //save the password
                    SharedPreferences settings = getSharedPreferences("PREFS", 0);
@@ -47,7 +49,9 @@ Button button;
                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                    startActivity(intent);
                    finish();
-               }else{
+               }
+
+               else {
                    //there is no match between the pins
                    Toast.makeText(CreatePasswordActivity.this, "Pins do not match!", Toast.LENGTH_SHORT).show();
 

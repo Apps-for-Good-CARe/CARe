@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.futuresmsactivity;
 
 // if statement, only goes through if the user said that they were in danger or if they did not enter the proper PIN. Will be finalized later.
 
@@ -10,18 +10,22 @@ import android.content.Intent;
 import android.location.Location;
 import android.telephony.SmsManager;
 
+import com.example.myapplication.R;
+
 public class SMSLocationSender {
 
     private final Context context;
     private final SMSSettings settings;
+    private final SMSRequestHandler requestHandler;
 
     public SMSLocationSender(Context context) {
         this.context = context;
         settings = new SMSSettings(context);
+        requestHandler = new SMSRequestHandler(context);
     }
 
-    public void send(Location location, String phoneNumber) {
-        sendSMS(format(location, R.string.locationResponse), phoneNumber);
+    public void sendToPhone(Location location, String phoneNumber) {
+        requestHandler.send(location, phoneNumber);
     }
 
     public void sendNetwork(Location location, String phoneNumber) {

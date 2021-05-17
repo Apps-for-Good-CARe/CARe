@@ -17,11 +17,12 @@ public class EnterPasswordActivity extends AppCompatActivity {
     Button button;
     String password;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_password);
-
+        //private
 //load the password
 
 
@@ -42,10 +43,11 @@ public class EnterPasswordActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), CreatePasswordActivity.class);
                 startActivity(intent);
                 finish();
-}              else{
-               Toast.makeText(EnterPasswordActivity.this, "Wrong pin!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(EnterPasswordActivity.this, "Wrong pin!", Toast.LENGTH_SHORT).show();
 
-}
+            }
        });
     }
 }
