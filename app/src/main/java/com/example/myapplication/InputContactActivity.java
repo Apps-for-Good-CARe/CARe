@@ -9,7 +9,7 @@ import android.widget.TabHost;
 import android.widget.Toast;
 import android.support.v7.app.AppCompatActivity;
 
-// Made with the help of Mrs. Taricco, https://youtu.be/jjL4R-aiwPE, https://developer.android.com/training/contacts-provider/modify-data#create-an-intent, and https://youtu.be/fJEFZ6EOM9o
+//Made with the help of Mrs. Taricco, https://youtu.be/jjL4R-aiwPE, https://developer.android.com/training/contacts-provider/modify-data#create-an-intent, and https://youtu.be/fJEFZ6EOM9o
 
 public class InputContactActivity extends AppCompatActivity {
 
