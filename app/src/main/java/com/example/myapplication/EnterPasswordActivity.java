@@ -12,6 +12,9 @@ import android.widget.Toast;
 import android.os.CountDownTimer;
 
 import android.support.v7.app.AppCompatActivity;
+
+//import androidx.appcompat.app.AppCompatActivity;
+
 //This class models what it's like to enter a pin into the app after it has been created
 //This class was made with the help of the following resource: https://www.youtube.com/watch?v=OOclvSIelcI&t=432s
 //the timer aspect of this class was made with the help of the following resource: https://developer.android.com/reference/android/os/CountDownTimer

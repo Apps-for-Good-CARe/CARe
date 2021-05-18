@@ -1,16 +1,12 @@
 package com.example.myapplication;
 
-import android.Manifest;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.Log;
-import android.widget.Toast;
+//import com.example.myapplication.CreatePasswordActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 
 // Made with the help of Mrs. Taricco
 
