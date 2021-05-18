@@ -73,7 +73,7 @@ public class CreatePasswordActivity extends AppCompatActivity {
 
     }
 
-    //public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+    // Requests permission to use SMS
 
     protected void sendSMSMessage() {
 
