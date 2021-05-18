@@ -9,11 +9,9 @@ import android.widget.TabHost;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 // Made with the help of Mrs. Taricco, https://youtu.be/jjL4R-aiwPE, https://developer.android.com/training/contacts-provider/modify-data#create-an-intent, and https://youtu.be/fJEFZ6EOM9o
 
 public class InputContactActivity extends AppCompatActivity {
-
 
     public static final String SHARED_PREFS = "CONTACT_PREFS";
 
