@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- This needs to start with pk. and must not be empty -->
+    <string name="mapbox_access_token" translatable="false">pk.test</string>
+    <!-- This is your GH key, register one at https://www.graphhopper.com/ -->
+    <string name="gh_key" translatable="false">c8771ff0-44ab-4396-a32b-7bb68c19563b</string>
+    <!-- This is the endpoint for the routing API, please note this endpoint might change in the future, please contact GraphHopper if you want to publish an app using this endpoint-->
+    <string name="base_url" translatable="false">https://graphhopper.com/api/1/navigate/</string>
+
+    <string name="map_view_styleUrl" translatable="false">https://api.maptiler.com/maps/basic/style.json?key=5xiUsuD4FaWCDpdindki</string>
+    <!-- The "day" style used for navigation -->
+    <string name="navigation_guidance_day" translatable="false">https://api.maptiler.com/maps/streets/style.json?key=5xiUsuD4FaWCDpdindki</string>
+    <!-- The "night" style used for navigation -->
+    <string name="navigation_guidance_night" translatable="false">https://api.maptiler.com/maps/streets/style.json?key=5xiUsuD4FaWCDpdindki</string>
+
+    <!--    &lt;!&ndash; These are the map style urls, you can get a key at mapilion.com &ndash;&gt;-->
+    <!--    &lt;!&ndash; The style used for regular map viewing and route planning &ndash;&gt;-->
+    <!--    <string name="map_view_styleUrl" translatable="false">https://tiles.mapilion.com/assets/osm-bright/style.json?key=672a6a5143mshad7a675dd88cf50p1296d1jsna34bbac81905</string>-->
+    <!--    &lt;!&ndash; The "day" style used for navigation &ndash;&gt;-->
+    <!--    <string name="navigation_guidance_day" translatable="false">https://tiles.mapilion.com/assets/osm-bright/style.json?key=672a6a5143mshad7a675dd88cf50p1296d1jsna34bbac81905</string>-->
+    <!--    &lt;!&ndash; The "night" style used for navigation &ndash;&gt;-->
+    <!--    <string name="navigation_guidance_night" translatable="false">https://tiles.mapilion.com/assets/osm-bright/style.json?key=672a6a5143mshad7a675dd88cf50p1296d1jsna34bbac81905</string>-->
+</resources>

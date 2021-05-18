@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 //this class models the notification feature of our app
 //It was made with the help of the following resources: https://www.youtube.com/watch?v=ov9HBdg33kM and https://www.youtube.com/watch?v=_5bSz4tsdP4
 public class NotificationCreator extends AppCompatActivity {

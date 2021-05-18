@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 //This class models a button that changes color to show how much danger a rider-share user is in during their journey (by means of a color-system)
 //It was made with the help of https://stackoverflow.com/questions/52558780/how-to-change-background-color-to-materialbutton-from-android-support-design-pro
 public class ColorChangingSignalActivity extends AppCompatActivity {
@@ -36,7 +36,7 @@ if(onRoute=true){
 }
 //if the user is not on route the button will turn yellow to indicate some suspicious activity but nothing too severe yet
 else{
-    colorButton.setBackgroundResource(R.color. suspicious);
+    colorButton.setBackgroundResource(R.color.suspicious);
     susCount++;
 }
 //if the route has been deemed "suspicious" 3 times in a row, then the user is officially in danger and the button will turn red, sending a
