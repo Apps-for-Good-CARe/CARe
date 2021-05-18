@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <application
 
@@ -13,27 +16,27 @@
         android:theme="@style/Theme.MyApplication"
         android:allowBackup="false"
         tools:ignore="ExtraText">
-        <activity android:name=".MainActivity">
-       </activity>
+
         <activity android:name=".CreatePasswordActivity">
+        </activity>
+        <activity android:name=".ColorChangingSignalActivity">
         </activity>
 
         <activity android:name=".EnterPasswordActivity">
         </activity>
 
-        <activity android:name=".NotificationActivity">
+        <activity android:name=".NotificationCreator">
         </activity>
-
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SendSMSMessage">
         </activity>
-
         <activity android:name=".InputContactActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name="Welcome"><intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
 
     </application>
 

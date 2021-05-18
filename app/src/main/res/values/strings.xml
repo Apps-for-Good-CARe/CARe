@@ -2,10 +2,90 @@
     <string name="app_name">My Application</string>
     <string name="inputEmergencyContactsStr">Input Emergency Contacts</string>
     <string name="emergencyContactNameLabelStr">Name:</string>
-    <string name="emergencyContactPhoneInputStr">Enter phone number:</string>
     <string name="emergencyContactNameInputStr">Enter name:</string>
     <string name="emergencyContactPhoneLabelStr">Phone:</string>
-    <string name="tipEmergencyContact">* 911 is automatically an emergency contact *</string>
+    <string name="emergencyContactPhoneInputStr">Enter phone number:</string>
     <string name="enter_pin">Enter pin</string>
-    <!-- <string name="enter"></string> !-->
+    <string name="Welcome">Welcome to CARe!</string>
+
+    <string name="PinSetup">Pin Set-Up</string>
+    <string name="ContactSetUp">Contact Set-Up</string>
+    <string name="tap">Tap Here to Continue</string>
+    <string name="todo"> TODO  </string>
+
+    <string name="active">active</string>
+    <string name="button3">send sms message</string>
+    <string name="defaultText">SMS location</string>
+    <string name="defaultTrigger">WhereRU</string>
+    <string name="enter">Enter</string>
+    <string name="textIntro">This app can respond to SMS messages with a given text by sending the actual gps location back to the sender.</string>
+    <string name="textTitle">Trigger text</string>
+    <string name="textTriggerDescription">Enter the text, on which a response should be triggered:</string>
+    <string name="textTriggerOn">Automatic responses are activated. We will respond to SMS messages with the text</string>
+    <string name="textTriggerOnShort">Respond to:</string>
+    <string name="textTriggerOff">No automatic responses will be sent.</string>
+    <string name="textRequests">Requests so far</string>
+    <string name="textNoRequests">No Requests so far</string>
+    <string name="activateDescription">Select this, to activate automatic responses:</string>
+    <string name="notificationTitle">request for location</string>
+    <string name="notificationSentSuccess">current location sent to %1$s</string>
+    <string name="notificationSentNetwork">current network location sent to %1$s</string>
+    <string name="notificationSentNoFix">no gps fix to send location to %1$s</string>
+    <string name="notificationNoGps">no gps enabled for request, please enable gps and send again from history</string>
+    <string name="notificationAborted">request aborted</string>
+    <string name="notificationRequest">location request from %1$s</string>
+    <string name="locationResponse">http://maps.google.de/maps?q=%1$s,%2$s ; Accuracy: %3$s m ; Speed: %4$s m/s ; Age: %5$s s</string>
+    <string name="locationResponseNetwork">Last network location: http://maps.google.de/maps?q=%1$s,%2$s ; Accuracy: %3$s m ; Speed: %4$s m/s ; Age: %5$s s</string>
+    <string name="locationUnknown">Unable to determine location.</string>
+    <string name="toastRequest">trying to send location to %1$s</string>
+    <string name="toggleButton">active</string>
+    <string name="timeTitle">Time to gps fix</string>
+    <string name="timeDescription">How long should I try to determine the actual gps location before sending back a response?</string>
+    <string name="useNetworkTitle">Fall back to network location</string>
+    <string name="useNetworkDescription">Enable this, to respond with the last known network location when either gps is disabled or there was no gps fix in time.</string>
+    <string name="googleMapsTitle">Newest Google Maps</string>
+    <string name="googleMapsDescription">Enable this, to be compatible with the latest Google Maps.</string>
+    <string-array name="times">
+        <item>15 seconds</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>2 mintues</item>
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+        <item>1 hour</item>
+    </string-array>
+    <string-array name="timeValues">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+        <item>300</item>
+        <item>600</item>
+        <item>3600</item>
+    </string-array>
+    <string name="defaultTime">600</string>
+    <string name="geoUrl">geo:%1$s,%2$s?q=%3$s%4$s</string>
+    <string name="locationListEntryHeader">"%1$s, %2$s</string>
+    <string name="locationListEntryFooter">"%1$s (%2$s)</string>
+    <string name="menuPreferences">Preferences</string>
+    <string name="menuClearRequests">Clear Requests</string>
+    <string name="menuAbout">About</string>
+    <string name="contextSendAgain">Send Again</string>
+    <string name="contextCall">Call</string>
+    <string name="contextSendSms">Send SMS</string>
+    <string name="statusLocationFound">Location found</string>
+    <string name="statusNoLocation">Location not found</string>
+    <string name="statusRunning">Sending...</string>
+    <string name="statusNoGps">No GPS</string>
+    <string name="statusAborted">Aborted</string>
+    <string name="statusNetwork">Network sent</string>
+    <string name="statusNetworkNoGps">Network sent, GPS not found</string>
+    <string name="aboutTitle">CARe</string>
+    <string name="aboutText">Passenger safety</string>>
+    <color name="aborted">#993333</color>
+    <color name="noGps">#ff0000</color>
+    <color name="locationFound">#009900</color>
+    <color name="noFix">#0000bb</color>
+    <color name="running">#333333</color>
+
 </resources>
