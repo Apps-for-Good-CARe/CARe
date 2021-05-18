@@ -1,71 +1,59 @@
 package com.example.myapplication;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+// Made with the help of Mrs. Taricco
+
 public class SendSMSMessage extends AppCompatActivity {
 
-    final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
-    String phone1;
-    String phone2;
-    String phone3;
+    private final String SHARED_PREFS = "CONTACT_PREFS";
 
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        // setContentView(R.layout.testing);
 
-        // Button sendBtn = (Button) findViewById(R.id.button3);
+        Log.d("TARICCO", "In SendSMSMessage Activity loadContactData() method");
 
-        //sendBtn.setOnClickListener(new View.OnClickListener() {
-        //  public void onClick(View view) {
-        //    loadContactData();
-    }
-    // });
+        String notFound = "";
 
+        // Get the SharedPreferences object, then get the contact phone numbers
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, 0);
+        String contactphone1 = sharedPreferences.getString("ContactPhone1", notFound);
+        String contactphone2 = sharedPreferences.getString("ContactPhone2", notFound);
+        String contactphone3 = sharedPreferences.getString("ContactPhone3", notFound);
 
+        // Debugging statements - just logging here to help
+        Log.d("StoresPhone1", "Contact Phone 1: " + contactphone1);
+        Log.d("StoresPhone2", "Contact Phone 2: " + contactphone2);
+        Log.d("StoresPhone3", "Contact Phone 3: " + contactphone3);
 
-
-    // Loads the contact information taken from the Input Contacts Activity
-
-    private void loadContactData(){
-
-        SharedPreferences sharedPreferences = getSharedPreferences("shared prefs", Context.MODE_PRIVATE);
-        SmsManager smsManager = SmsManager.getDefault();
-        phone1 = sharedPreferences.getString("phoneCon1", "");
-        phone2 = sharedPreferences.getString("phoneCon2", "");
-        phone3 = sharedPreferences.getString("phoneCon3", "");
         String message = "This is CARe, a ride safety app. Please make sure this contact is safe, as we suspect suspicious behavior due to their current route.";
 
-        if (!phone1.equals("")) {
-            //smsManager.sendTextMessage(phone1, null, message, null, null);
-            Log.d("Name", phone1);
+        SmsManager smsManager = SmsManager.getDefault();
+        if (!contactphone1.isEmpty()) {
+            Log.d("Test1", "Sending a message to contact phone 1: " + contactphone1);
+            smsManager.sendTextMessage(contactphone1, null, message, null, null);
         }
 
-        if (!phone2.equals("")) {
-            //smsManager.sendTextMessage(phone2, null, message, null, null);
-            Log.d("Name", phone2);
+        if (!contactphone2.isEmpty()) {
+            Log.d("Test2", "Sending a message to contact phone 2: " + contactphone2);
+            smsManager.sendTextMessage(contactphone2, null, message, null, null);
         }
 
-        if (!phone3.equals("")) {
-            //smsManager.sendTextMessage(phone3, null, message, null, null);
-            Log.d("Name", phone3);
+        if (!contactphone3.isEmpty()) {
+            Log.d("Test3", "Sending a message to contact phone 3: " + contactphone3);
+            smsManager.sendTextMessage(contactphone3, null, message, null, null);
         }
-
     }
-
-    // Sends the SMS message
 
     protected void sendSMSMessage() {
 
@@ -75,33 +63,7 @@ public class SendSMSMessage extends AppCompatActivity {
 
             else {
 
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, MY_PERMISSIONS_REQUEST_SEND_SMS);
-
-            }
-
-        }
-
-    }
-
-    // Requests permission to use SMS messages on the user's phone
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
-
-        switch (requestCode) {
-
-            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
-
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    Toast.makeText(getApplicationContext(), "SMS sent.", Toast.LENGTH_LONG).show();
-
-                } else {
-
-                    Toast.makeText(getApplicationContext(), "SMS failed, please try again.", Toast.LENGTH_LONG).show();
-                    return;
-
-                }
+                //ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, MY_PERMISSIONS_REQUEST_SEND_SMS);
 
             }
 

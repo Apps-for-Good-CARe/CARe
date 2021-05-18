@@ -3,7 +3,6 @@ package com.example.myapplication;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.Toast;
@@ -95,10 +94,11 @@ public class InputContactActivity extends AppCompatActivity {
 
     }
 
-    private void loadDataAndUpdateView() {
+    // loadData() and updateView() are separated so that the SendSMSMessage activity can call the loadData() method.
 
+    private void loadDataAndUpdateView() {
         String notFound = "";
-        Log.d("TESTER2", "Calling loadDataAndUpdateView() method");
+        Log.d("TESTER2", "Calling loadData() method");
 
         // Get the SharedPreferences by filename
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, 0);

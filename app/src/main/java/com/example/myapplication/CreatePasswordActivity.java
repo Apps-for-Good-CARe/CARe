@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -9,6 +11,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 //this class models a pin set-up mechanism
 //It was created with the help of the following resource: https://www.youtube.com/watch?v=OOclvSIelcI&t=432s
 public class CreatePasswordActivity extends AppCompatActivity {
@@ -60,5 +65,30 @@ Button button;
                }
            }
        });
+    }
+
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+
+        final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
+
+        switch (requestCode) {
+
+            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
+
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    Toast.makeText(getApplicationContext(), "Permission granted.", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    Toast.makeText(getApplicationContext(), "This app will not have the ability to send SMS messages to your emergency contacts.", Toast.LENGTH_LONG).show();
+                    return;
+
+                }
+
+            }
+
+        }
+
     }
 }
