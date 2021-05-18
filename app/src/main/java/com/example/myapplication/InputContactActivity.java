@@ -1,13 +1,14 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.Toast;
 import android.support.v7.app.AppCompatActivity;
-//import androidx.appcompat.app.AppCompatActivity;
 
 
 // Made with the help of Mrs. Taricco, https://youtu.be/jjL4R-aiwPE, https://developer.android.com/training/contacts-provider/modify-data#create-an-intent, and https://youtu.be/fJEFZ6EOM9o
@@ -15,6 +16,9 @@ import android.support.v7.app.AppCompatActivity;
 public class InputContactActivity extends AppCompatActivity {
 
     public static final String SHARED_PREFS = "CONTACT_PREFS";
+    Button done1button;
+    Button done2button;
+    Button done3button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,31 @@ public class InputContactActivity extends AppCompatActivity {
         tabHost.addTab(spec);
 
         loadDataAndUpdateView();
+
+        done1button = findViewById(R.id.done1);
+        done1button.setOnClickListener(v -> {
+
+            Toast.makeText(InputContactActivity.this, "You clicked Return to Welcome Page.", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getApplicationContext(), Welcome.class);
+            startActivity(i);
+            finish();
+        });
+        done2button = findViewById(R.id.done2);
+        done2button.setOnClickListener(v -> {
+
+            Toast.makeText(InputContactActivity.this, "You clicked Return to Welcome Page.", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getApplicationContext(), Welcome.class);
+            startActivity(i);
+            finish();
+        });
+        done3button = findViewById(R.id.done3);
+        done3button.setOnClickListener(v -> {
+
+            Toast.makeText(InputContactActivity.this, "You clicked Return to Welcome Page.", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getApplicationContext(), Welcome.class);
+            startActivity(i);
+            finish();
+        });
 
     }
 

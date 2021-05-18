@@ -12,9 +12,6 @@ import android.widget.Toast;
 import android.os.CountDownTimer;
 
 import android.support.v7.app.AppCompatActivity;
-
-//import androidx.appcompat.app.AppCompatActivity;
-
 //This class models what it's like to enter a pin into the app after it has been created
 //This class was made with the help of the following resource: https://www.youtube.com/watch?v=OOclvSIelcI&t=432s
 //the timer aspect of this class was made with the help of the following resource: https://developer.android.com/reference/android/os/CountDownTimer
@@ -76,10 +73,8 @@ System.out.println(text);
 
 System.out.println(text);
             if (text.equals(password)) {
-                //return to the home/map page if the user dismisses the notification by inputting their pin in correctly and confirming their safety
-                // will need to change this to the map screen/algorithm that andrew's working on
-                Toast.makeText(EnterPasswordActivity.this, "Correct pin!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), CreatePasswordActivity.class);
+                //return to the home/map page if the user dismisses the notification by inputting their pin in correctly and confirming their safetyToast.makeText(EnterPasswordActivity.this, "Correct pin!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), NavigationLauncherActivity.class);
 
                 startActivity(intent);
                 wrongPassCount = 0;

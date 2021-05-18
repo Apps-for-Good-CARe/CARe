@@ -6,6 +6,7 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -91,10 +93,13 @@ public class NavigationLauncherActivity extends AppCompatActivity implements OnM
     private NavigationMapRoute mapRoute;
     private MapboxMap mapboxMap;
     private PermissionsManager permissionsManager;
-    EditText bool;
     Handler handler = new Handler();
     Runnable runnable;
     int delay = 30000;
+    Button colorButton;
+    Button mapDoneButton;
+    Boolean onRoute;
+    int susCount;
 
     @BindView(R.id.mapView)
     MapView mapView;
@@ -123,7 +128,25 @@ public class NavigationLauncherActivity extends AppCompatActivity implements OnM
         mapView.setStyleUrl(getString(R.string.map_view_styleUrl));
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
-        bool=findViewById(R.id.textView);
+        colorButton = findViewById(R.id.ColorButton);
+        colorButton.setOnClickListener(v -> {
+
+            Toast.makeText(NavigationLauncherActivity.this, "You clicked the Contact Emergency Contact Button.", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getApplicationContext(), SendSMSMessage.class);
+            startActivity(i);
+            finish();
+
+
+        });
+
+        mapDoneButton = findViewById(R.id.mapdone);
+        mapDoneButton.setOnClickListener(v -> {
+
+            Toast.makeText(NavigationLauncherActivity.this, "You clicked Return to Welcome Page.", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getApplicationContext(), Welcome.class);
+            startActivity(i);
+            finish();
+        });
 
         localeUtils = new LocaleUtils();
         if (getSupportActionBar() != null) {
@@ -142,18 +165,18 @@ public class NavigationLauncherActivity extends AppCompatActivity implements OnM
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.settings:
-                showSettings();
-                return true;
-            case R.id.navigate_btn:
-                launchNavigationWithRoute();
-                return true;
-            case R.id.reset_route_btn:
-                clearRoute();
-                return true;
-            case R.id.fetch_solution_btn:
-                showSolutionInputDialog();
-                return true;
+//            case R.id.settings:
+//                showSettings();
+//                return true;
+//            case R.id.navigate_btn:
+//                launchNavigationWithRoute();
+//                return true;
+//            case R.id.reset_route_btn:
+//                clearRoute();
+//                return true;
+//            case R.id.fetch_solution_btn:
+//                showSolutionInputDialog();
+//                return true;
             case R.id.geocoding_search_btn:
                 showGeocodingInputDialog();
                 return true;
@@ -207,7 +230,25 @@ public class NavigationLauncherActivity extends AppCompatActivity implements OnM
                     Location lastKnownLocation = getLastKnownLocation();
                     Point location = Point.fromLngLat(lastKnownLocation.getLongitude(), lastKnownLocation.getLatitude());
                     System.out.println(OnPath.isOnPath(PolylineUtils.decode(route.geometry(), 6), location));
-                    bool.setText(Boolean.toString(OnPath.isOnPath(PolylineUtils.decode(route.geometry(), 6), location)));
+                    onRoute = OnPath.isOnPath(PolylineUtils.decode(route.geometry(), 6), location);
+                    Drawable background = colorButton.getBackground();
+                    //if the user is on route or on a route that is "safe" because it is one of the most common, the button will be green.
+                    if(onRoute=true){
+                        colorButton.setBackgroundResource(R.color.safe);
+                    }
+//if the user is not on route the button will turn yellow to indicate some suspicious activity but nothing too severe yet
+                    else{
+                        colorButton.setBackgroundResource(R.color.suspicious);
+                        susCount++;
+                    }
+//if the route has been deemed "suspicious" 3 times in a row, then the user is officially in danger and the button will turn red, sending a
+                    //notification to the user that there is suspicious activity
+                    if(susCount==3){
+                        colorButton.setBackgroundResource(R.color.danger);
+                        Intent intent = new Intent(getApplicationContext(), NotificationCreator.class);
+                        startActivity(intent);
+                        finish();
+                    }
                 }
                 catch (Exception e){
                     System.out.println("gahhhhh");
@@ -272,7 +313,7 @@ public class NavigationLauncherActivity extends AppCompatActivity implements OnM
     private void showHelpDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.help_message_title);
-        builder.setMessage(Html.fromHtml("1. Please note, this is a demo and not a full featured application. The purpose of this application is to provide an easy starting point for developers to create a navigation application with GraphHopper<br/>2. You should enable your GPS/location<br/>3.You can either search for a location using the magnifier icon or by long pressing on the map<br/>4. Start the navigation by tapping the arrow button<br/><br/>This project is 100% open source, contributions are welcome.<br/><br/>Please drive carefully and always abide local law and signs. Roads might be impassible due to construction projects, traffic, weather, or other events."));
+        builder.setMessage(Html.fromHtml("Hello CARe user! Here are some instructions for using this app. "+"<br>"+"<br>"+" 1. Press the magnifying glass and enter in your destination at the start of your ride share. "+"<br>"+"<br>"+" 2. If the button turns yellow, that means there could potentially be some suspicious activity. "+"<br>"+"<br>"+" 3. If the button turns red, that means the app has detected a large deviation from a possible route, and your emergency contact will be notified. "+"<br>"+"<br>"+" Note that at any point, you can notify your emergency contacts by pressing the button."));
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         builder.setPositiveButton(R.string.agree, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -281,11 +322,11 @@ public class NavigationLauncherActivity extends AppCompatActivity implements OnM
                 editor.apply();
             }
         });
-        builder.setNeutralButton(R.string.github, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/graphhopper/graphhopper-navigation-example")));
-            }
-        });
+//        builder.setNeutralButton(R.string.github, new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int id) {
+//                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/graphhopper/graphhopper-navigation-example")));
+//            }
+//        });
 
         AlertDialog dialog = builder.create();
         dialog.show();

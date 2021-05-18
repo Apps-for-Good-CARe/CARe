@@ -47,7 +47,7 @@ public class Welcome extends AppCompatActivity {
         Tap.setOnClickListener(v -> {
 
             Toast.makeText(Welcome.this, "You clicked Continue.", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(getApplicationContext(), NotificationCreator.class);
+            Intent i = new Intent(getApplicationContext(), NavigationLauncherActivity.class);
             startActivity(i);
             finish();
     });}}

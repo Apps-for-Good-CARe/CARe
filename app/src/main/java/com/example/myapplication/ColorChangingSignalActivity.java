@@ -16,8 +16,8 @@ public class ColorChangingSignalActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        colorButton = findViewById(R.id.colorButton);
+        setContentView(R.layout.activity_navigation_launcher);
+        colorButton = findViewById(R.id.ColorButton);
         colorButton.setOnClickListener(v -> {
 
                     Toast.makeText(ColorChangingSignalActivity.this, "You clicked the Contact Emergency Contact Button.", Toast.LENGTH_SHORT).show();

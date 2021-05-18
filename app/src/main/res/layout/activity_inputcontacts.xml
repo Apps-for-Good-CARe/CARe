@@ -83,6 +83,12 @@
                         android:paddingBottom="20dp"
                         android:textSize="24sp" />
 
+                    <Button
+                        android:id="@+id/done1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ContactDone" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -132,6 +138,11 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp"
                         android:textSize="24sp" />
+                    <Button
+                        android:id="@+id/done2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ContactDone" />
 
                 </LinearLayout>
 
@@ -183,6 +194,11 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp"
                         android:textSize="24sp" />
+                    <Button
+                        android:id="@+id/done3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ContactDone" />
 
                 </LinearLayout>
 
