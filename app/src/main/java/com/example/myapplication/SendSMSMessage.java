@@ -55,21 +55,46 @@ public class SendSMSMessage extends AppCompatActivity {
         }
     }
 
-    protected void sendSMSMessage() {
+    //protected void sendSMSMessage() {
 
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+    //    if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
 
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)) { }
+    //        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)) { }
 
-            else {
+    //        else {
 
-                //ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, MY_PERMISSIONS_REQUEST_SEND_SMS);
+    //            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, MY_PERMISSIONS_REQUEST_SEND_SMS);
 
-            }
+    //        }
 
-        }
+    //    }
 
-    }
+    //}
+
+    //public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+
+    //    final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
+
+    //    switch (requestCode) {
+
+    //        case MY_PERMISSIONS_REQUEST_SEND_SMS: {
+
+    //            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+    //                Toast.makeText(getApplicationContext(), "Permission granted.", Toast.LENGTH_LONG).show();
+
+    //            } else {
+
+    //                Toast.makeText(getApplicationContext(), "This app will not have the ability to send SMS messages to your emergency contacts.", Toast.LENGTH_LONG).show();
+    //                return;
+
+    //            }
+
+    //        }
+
+    //    }
+
+    //}
 
 }
 

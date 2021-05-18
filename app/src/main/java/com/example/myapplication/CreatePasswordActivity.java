@@ -67,28 +67,4 @@ Button button;
        });
     }
 
-    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
-
-        final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
-
-        switch (requestCode) {
-
-            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
-
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    Toast.makeText(getApplicationContext(), "Permission granted.", Toast.LENGTH_LONG).show();
-
-                } else {
-
-                    Toast.makeText(getApplicationContext(), "This app will not have the ability to send SMS messages to your emergency contacts.", Toast.LENGTH_LONG).show();
-                    return;
-
-                }
-
-            }
-
-        }
-
-    }
 }
