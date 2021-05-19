@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.Log;
-//import com.example.myapplication.CreatePasswordActivity;
 
 import android.support.v7.app.AppCompatActivity;
 
@@ -20,6 +19,10 @@ public class SendSMSMessage extends AppCompatActivity {
 
         Log.d("TARICCO", "In SendSMSMessage Activity loadContactData() method");
 
+        this.sendMessage();
+    }
+
+    private void sendMessage() {
         String notFound = "";
 
         // Get the SharedPreferences object, then get the contact phone numbers
@@ -36,6 +39,7 @@ public class SendSMSMessage extends AppCompatActivity {
         String message = "This is CARe, a ride safety app. Please make sure this contact is safe, as we suspect suspicious behavior due to their current route.";
 
         SmsManager smsManager = SmsManager.getDefault();
+
         if (!contactphone1.isEmpty()) {
             Log.d("Test1", "Sending a message to contact phone 1: " + contactphone1);
             smsManager.sendTextMessage(contactphone1, null, message, null, null);
@@ -50,6 +54,7 @@ public class SendSMSMessage extends AppCompatActivity {
             Log.d("Test3", "Sending a message to contact phone 3: " + contactphone3);
             smsManager.sendTextMessage(contactphone3, null, message, null, null);
         }
+
     }
 
 }

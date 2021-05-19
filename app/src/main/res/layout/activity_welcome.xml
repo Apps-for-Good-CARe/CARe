@@ -44,10 +44,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#FFEB5B"
+            android:backgroundTint="#FFC97C"
             android:paddingTop="40dp"
             android:paddingBottom="40dp"
-            android:text="@string/tap" />
+            android:text="@string/tap"
+            android:textColor="@color/black"/>
 
         <Space
             android:layout_width="match_parent"
@@ -67,7 +68,8 @@
                 android:paddingRight="20dp"
                 android:paddingBottom="20dp"
                 android:text="@string/ContactSetUp"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:textColor="@color/black"/>
 
             <Space
                 android:layout_width="0dp"
@@ -83,7 +85,8 @@
                 android:paddingRight="40dp"
                 android:paddingBottom="20dp"
                 android:text="@string/PinSetup"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
