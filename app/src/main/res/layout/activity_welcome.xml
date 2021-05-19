@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#FFCEA0"
+            android:backgroundTint="#FFEB5B"
             android:paddingTop="40dp"
             android:paddingBottom="40dp"
             android:text="@string/tap" />
