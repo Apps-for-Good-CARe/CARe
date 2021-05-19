@@ -48,7 +48,7 @@
     <string name="help_message_title">Getting Started</string>
     <string name="legal_title">Legal Notice</string>
     <string name="agree">OK</string>
-    <string name="github"></string>
+    <string name="github"> </string>
 
     <string name="open_gh_maps">Open Route from GH Maps</string>
     <string name="open_vrp_solution">Open VRP Solution</string>
@@ -62,7 +62,7 @@
     <string name="enter_pin">Enter pin</string>
     <string name="Welcome">Welcome to CARe!</string>
     <string name="ContactDone">Return to Welcome Page</string>
-
+    <string name="IconDescription">The CARe logo</string>
 
     <string name="PinSetup">Pin Set-Up</string>
     <string name="ContactSetUp">Contact Set-Up</string>
