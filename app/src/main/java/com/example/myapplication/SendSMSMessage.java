@@ -22,7 +22,7 @@ public class SendSMSMessage extends AppCompatActivity {
         this.sendMessage();
     }
 
-    private void sendMessage() {
+    public void sendMessage() {
 
         String notFound = "";
 
@@ -59,5 +59,3 @@ public class SendSMSMessage extends AppCompatActivity {
     }
 
 }
-
-

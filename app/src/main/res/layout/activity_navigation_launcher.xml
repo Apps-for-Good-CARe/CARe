@@ -27,7 +27,8 @@ android:layout_height="match_parent">
         android:layout_marginTop="640dp"
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="243dp"
-        android:text="Send SMS" />
+        android:text="Send SMS"/>
+
     <ProgressBar
         android:id="@+id/loading"
         android:layout_width="255dp"
@@ -40,10 +41,9 @@ android:layout_height="match_parent">
         android:id="@+id/mapdone"
         android:layout_width="169dp"
         android:layout_height="wrap_content"
-        android:text="@string/ContactDone" />
+        android:text="@string/ContactDone"
+        android:textColor="@color/white"
+        android:background="@color/backgroundWelcome"/>
 </com.mapbox.mapboxsdk.maps.MapView>
-
-
-
 
 </RelativeLayout>
