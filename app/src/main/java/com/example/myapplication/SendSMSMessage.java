@@ -23,6 +23,7 @@ public class SendSMSMessage extends AppCompatActivity {
     }
 
     private void sendMessage() {
+
         String notFound = "";
 
         // Get the SharedPreferences object, then get the contact phone numbers
