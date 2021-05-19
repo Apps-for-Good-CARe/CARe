@@ -49,11 +49,13 @@
     <string name="legal_title">Legal Notice</string>
     <string name="agree">OK</string>
     <string name="github"></string>
+    <string name="IconDescription">The CARe logo</string>
+
 
     <string name="open_gh_maps">Open Route from GH Maps</string>
     <string name="open_vrp_solution">Open VRP Solution</string>
     <!-- <string name="enter"></string> !-->
-    <string name="app_name">My Application</string>
+    <string name="app_name">CARe</string>
     <string name="inputEmergencyContactsStr">Input Emergency Contacts</string>
     <string name="emergencyContactNameLabelStr">Name:</string>
     <string name="emergencyContactNameInputStr">Enter name:</string>
